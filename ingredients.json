@@ -1,0 +1,38 @@
+{
+  "onion": {
+    "price": 1.0,
+    "measurement": "ct"
+  },
+  "shrimp": {
+    "price": 5.68,
+    "measurement": "lb"
+  },
+  "shallot": {
+    "price": 0.74,
+    "measurement": "cup"
+  },
+  "lemon": {
+    "price": 0.33,
+    "measurement": "ct"
+  },
+  "pasta": {
+    "price": 1.0,
+    "measurement": "lb"
+  },
+  "cherry tomatoes": {
+    "price": 1.0,
+    "measurement": "pint"
+  },
+  "basil": {
+    "price": 2.0,
+    "measurement": "ct"
+  },
+  "butter": {
+    "price": 2.25,
+    "measurement": "cup"
+  },
+  "olive oil": {
+    "price": 0.4,
+    "measurement": "fl_oz"
+  }
+}

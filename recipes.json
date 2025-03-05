@@ -1,0 +1,48 @@
+{
+  "folders": {
+    "Dinner": {
+      "folders": {},
+      "recipes": {
+        "Shrimp Cherry Tomato Pasta": {
+          "ingredients": {
+            "Shrimp": {
+              "amount": 1.0,
+              "unit": "lb"
+            },
+            "Lemon": {
+              "amount": 1.0,
+              "unit": "ct"
+            },
+            "Shallot": {
+              "amount": 0.25,
+              "unit": "cup"
+            },
+            "Pasta": {
+              "amount": 1,
+              "unit": "lb"
+            },
+            "Cherry Tomatoes": {
+              "amount": 1,
+              "unit": "pint"
+            },
+            "Butter": {
+              "amount": 2,
+              "unit": "tbsp"
+            },
+            "Olive Oil": {
+              "amount": 2,
+              "unit": "tbsp"
+            },
+            "Parmesan": {
+              "amount": 2,
+              "unit": "tbsp"
+            }
+          },
+          "instructions": "",
+          "notes": ""
+        }
+      }
+    }
+  },
+  "recipes": {}
+}

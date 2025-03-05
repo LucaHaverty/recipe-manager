@@ -8,8 +8,8 @@
     "measurement": "lb"
   },
   "shallot": {
-    "price": 0.74,
-    "measurement": "cup"
+    "price": 0.32,
+    "measurement": "ct"
   },
   "lemon": {
     "price": 0.33,
@@ -20,7 +20,7 @@
     "measurement": "lb"
   },
   "cherry tomatoes": {
-    "price": 1.0,
+    "price": 3.5,
     "measurement": "pint"
   },
   "basil": {
@@ -34,5 +34,65 @@
   "olive oil": {
     "price": 0.4,
     "measurement": "fl_oz"
+  },
+  "butter chicken sauce": {
+    "price": 4.29,
+    "measurement": "ct"
+  },
+  "fake chicken": {
+    "price": 4.49,
+    "measurement": "ct"
+  },
+  "rice": {
+    "price": 0.25,
+    "measurement": "cup"
+  },
+  "naan": {
+    "price": 4.49,
+    "measurement": "ct"
+  },
+  "mexican cheese": {
+    "price": 0.286,
+    "measurement": "oz"
+  },
+  "taco seasoning": {
+    "price": 0.79,
+    "measurement": "ct"
+  },
+  "lime": {
+    "price": 0.67,
+    "measurement": "ct"
+  },
+  "roma tomatoes": {
+    "price": 0.35,
+    "measurement": "ct"
+  },
+  "white onion": {
+    "price": 0.58,
+    "measurement": "ct"
+  },
+  "red bell pepper": {
+    "price": 1.5,
+    "measurement": "ct"
+  },
+  "refried beans": {
+    "price": 1.59,
+    "measurement": "ct"
+  },
+  "tortillas": {
+    "price": 0.2,
+    "measurement": "ct"
+  },
+  "garlic": {
+    "price": 0.5,
+    "measurement": "ct"
+  },
+  "feta": {
+    "price": 0.5625,
+    "measurement": "oz"
+  },
+  "fresh thyme": {
+    "price": 1.5,
+    "measurement": "ct"
   }
 }

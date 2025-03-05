@@ -14,8 +14,8 @@
               "unit": "ct"
             },
             "Shallot": {
-              "amount": 0.25,
-              "unit": "cup"
+              "amount": 1,
+              "unit": "ct"
             },
             "Pasta": {
               "amount": 1,
@@ -36,6 +36,109 @@
             "Parmesan": {
               "amount": 2,
               "unit": "tbsp"
+            }
+          },
+          "instructions": "",
+          "notes": ""
+        },
+        "Butter Fake Chicken": {
+          "ingredients": {
+            "Butter Chicken Sauce": {
+              "amount": 1.0,
+              "unit": "ct"
+            },
+            "Fake Chicken": {
+              "amount": 1.0,
+              "unit": "ct"
+            },
+            "Rice": {
+              "amount": 1.0,
+              "unit": "cup"
+            },
+            "Naan": {
+              "amount": 1.0,
+              "unit": "ct"
+            }
+          },
+          "instructions": "",
+          "notes": ""
+        },
+        "Simple Tacos": {
+          "ingredients": {
+            "Tortillas": {
+              "amount": 12.0,
+              "unit": "ct"
+            },
+            "Taco Seasoning": {
+              "amount": 1.0,
+              "unit": "ct"
+            },
+            "Lime": {
+              "amount": 1.0,
+              "unit": "ct"
+            },
+            "Roma Tomatoes": {
+              "amount": 3.0,
+              "unit": "ct"
+            },
+            "White onion": {
+              "amount": 1.0,
+              "unit": "ct"
+            },
+            "Red Bell Pepper": {
+              "amount": 1.0,
+              "unit": "ct"
+            },
+            "Mexican Cheese": {
+              "amount": 8.0,
+              "unit": "oz"
+            },
+            "Refried Beans": {
+              "amount": 1.0,
+              "unit": "ct"
+            }
+          },
+          "instructions": "",
+          "notes": ""
+        },
+        "Baked Feta Pasta": {
+          "ingredients": {
+            "Cherry Tomatoes": {
+              "amount": 2.0,
+              "unit": "pint"
+            },
+            "Shallot": {
+              "amount": 1.0,
+              "unit": "ct"
+            },
+            "Garlic": {
+              "amount": 1.0,
+              "unit": "ct"
+            },
+            "Olive Oil": {
+              "amount": 0.5,
+              "unit": "cup"
+            },
+            "Red Pepper flakes": {},
+            "Feta": {
+              "amount": 8.0,
+              "unit": "oz"
+            },
+            "Fresh Thyme": {
+              "amount": 1.0,
+              "unit": "ct"
+            },
+            "Pasta": {
+              "amount": 1.0,
+              "unit": "lb"
+            },
+            "Lemon": {
+              "amount": 1.0,
+              "unit": "ct"
+            },
+            "Basil": {
+              "amount": 1.0,
+              "unit": "ct"
             }
           },
           "instructions": "",

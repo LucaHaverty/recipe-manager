@@ -4,7 +4,7 @@ import textwrap
 from typing import Dict, List, Any, Optional
 
 from unit_converter import UnitConverter
-d
+
 class RecipeManager:
     def __init__(self, data_file: str = "recipes.json", price_file: str = "ingredients.json"):
         self.data_file = data_file

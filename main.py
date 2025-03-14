@@ -171,14 +171,23 @@ class RecipeManager:
             print(f"Folder '{folder_name}' created!")
     
     def view_recipe(self, recipe_name: str) -> None:
-        """View a recipe if it exists, showing ingredient prices."""
+        """View a recipe if it exists, showing ingredient prices, with case-insensitive matching."""
         current = self.get_current_node()
-        if recipe_name in current["recipes"]:
-            recipe = current["recipes"][recipe_name]
+        
+        # Create a dictionary mapping lowercase recipe names to their actual names
+        recipe_name_map = {name.lower(): name for name in current["recipes"]}
+        
+        # Check if the lowercase version of the requested recipe exists
+        if recipe_name.lower() in recipe_name_map:
+            # Use the actual recipe name with correct capitalization
+            actual_recipe_name = recipe_name_map[recipe_name.lower()]
+            recipe = current["recipes"][actual_recipe_name]
+            
             print("\n" + "=" * 50)
-            print(f"Recipe: {recipe_name}")
+            print(f"Recipe: {actual_recipe_name}")
             print("=" * 50)
             
+            # Rest of the view_recipe functionality remains the same
             # Calculate and display total price
             total_price = self.calculate_recipe_price(recipe)
             if total_price is not None:
@@ -340,136 +349,143 @@ class RecipeManager:
             print("Could not calculate price due to missing ingredient price data.")
     
     def edit_recipe(self, recipe_name: str) -> None:
-        """Edit an existing recipe."""
+        """Edit an existing recipe, with case-insensitive matching."""
         current = self.get_current_node()
-        if recipe_name not in current["recipes"]:
-            print(f"Recipe '{recipe_name}' doesn't exist!")
-            return
         
-        recipe = current["recipes"][recipe_name]
-        print(f"\nEditing recipe: {recipe_name}")
+        # Create a dictionary mapping lowercase recipe names to their actual names
+        recipe_name_map = {name.lower(): name for name in current["recipes"]}
         
-        # Display current ingredients
-        print("\nCurrent ingredients:")
-        if isinstance(recipe["ingredients"], dict):
-            # New format
-            for i, (ingredient, details) in enumerate(recipe["ingredients"].items(), 1):
-                amount = details.get("amount", "")
-                unit = details.get("unit", "")
-                
-                # Calculate price for this ingredient
-                ingredient_price = None
-                if amount and (unit or True):  # Even if unit is empty, try to calculate
-                    ingredient_price = self.calculate_ingredient_price(ingredient, amount, unit)
-                
-                # Format display
-                if amount and unit:
-                    ingredient_text = f"  {i}. {ingredient}: {amount} {unit}"
-                elif amount:
-                    ingredient_text = f"  {i}. {ingredient}: {amount}"
-                elif unit:
-                    ingredient_text = f"  {i}. {ingredient}: {unit}"
-                else:
-                    ingredient_text = f"  {i}. {ingredient}"
-                
-                # Add price
-                if ingredient_price is not None:
-                    print(f"{ingredient_text} (${ingredient_price:.2f})")
-                else:
-                    print(f"{ingredient_text} (price unknown)")
-        else:
-            # Legacy format
-            for i, ingredient in enumerate(recipe["ingredients"], 1):
-                print(f"  {i}. {ingredient}")
-        
-        choice = input("\nEdit ingredients? (y/n): ").lower()
-        if choice == 'y':
-            ingredients = {}
-            print("Enter ingredients (format: ingredient amount unit, empty line to finish):")
-            print("Example: Shrimp 1 lb")
+        # Check if the lowercase version of the requested recipe exists
+        if recipe_name.lower() in recipe_name_map:
+            # Use the actual recipe name with correct capitalization
+            actual_recipe_name = recipe_name_map[recipe_name.lower()]
+            recipe = current["recipes"][actual_recipe_name]
             
-            while True:
-                ingredient_line = input("> ").strip()
-                if not ingredient_line:
-                    break
-                
-                # Parse the ingredient line
-                parts = ingredient_line.split()
-                if len(parts) < 1:
-                    print("Invalid format. Please enter at least the ingredient name.")
-                    continue
+            print(f"\nEditing recipe: {actual_recipe_name}")
+            
+            # Display current ingredients
+            print("\nCurrent ingredients:")
+            if isinstance(recipe["ingredients"], dict):
+                # New format
+                for i, (ingredient, details) in enumerate(recipe["ingredients"].items(), 1):
+                    amount = details.get("amount", "")
+                    unit = details.get("unit", "")
                     
-                if len(parts) == 1:
-                    # Just ingredient name
-                    ingredient_name = parts[0]
-                    ingredients[ingredient_name] = {}
-                elif len(parts) >= 3:
-                    # Ingredient with amount and unit
-                    # The ingredient name might have spaces, so join everything except the last two parts
-                    amount_index = len(parts) - 2
-                    ingredient_name = " ".join(parts[:amount_index])
-                    try:
-                        amount = float(parts[amount_index])
-                        unit = parts[amount_index + 1]
-                        ingredients[ingredient_name] = {"amount": amount, "unit": unit}
-                    except ValueError:
-                        print("Invalid amount format. Using as ingredient name only.")
-                        ingredient_name = ingredient_line
-                        ingredients[ingredient_name] = {}
-                elif len(parts) == 2:
-                    # Try to parse the second part as a number
-                    ingredient_name = parts[0]
-                    try:
-                        amount = float(parts[1])
-                        ingredients[ingredient_name] = {"amount": amount}
-                    except ValueError:
-                        # If not a number, treat as a unit
-                        ingredients[ingredient_name] = {"unit": parts[1]}
+                    # Calculate price for this ingredient
+                    ingredient_price = None
+                    if amount and (unit or True):  # Even if unit is empty, try to calculate
+                        ingredient_price = self.calculate_ingredient_price(ingredient, amount, unit)
+                    
+                    # Format display
+                    if amount and unit:
+                        ingredient_text = f"  {i}. {ingredient}: {amount} {unit}"
+                    elif amount:
+                        ingredient_text = f"  {i}. {ingredient}: {amount}"
+                    elif unit:
+                        ingredient_text = f"  {i}. {ingredient}: {unit}"
+                    else:
+                        ingredient_text = f"  {i}. {ingredient}"
+                    
+                    # Add price
+                    if ingredient_price is not None:
+                        print(f"{ingredient_text} (${ingredient_price:.2f})")
+                    else:
+                        print(f"{ingredient_text} (price unknown)")
+            else:
+                # Legacy format
+                for i, ingredient in enumerate(recipe["ingredients"], 1):
+                    print(f"  {i}. {ingredient}")
             
-            recipe["ingredients"] = ingredients
-        
-        print("\nCurrent instructions:")
-        wrapped_instructions = textwrap.wrap(recipe["instructions"], width=70)
-        for line in wrapped_instructions:
-            print(f"  {line}")
-        
-        choice = input("\nEdit instructions? (y/n): ").lower()
-        if choice == 'y':
-            print("Enter instructions (multi-line, type 'END' on a new line to finish):")
-            instructions_lines = []
-            while True:
-                line = input()
-                if line.strip() == "END":
-                    break
-                instructions_lines.append(line)
-            recipe["instructions"] = " ".join(instructions_lines)
-        
-        print("\nCurrent notes:")
-        if "notes" in recipe and recipe["notes"]:
-            wrapped_notes = textwrap.wrap(recipe["notes"], width=70)
-            for line in wrapped_notes:
+            choice = input("\nEdit ingredients? (y/n): ").lower()
+            if choice == 'y':
+                ingredients = {}
+                print("Enter ingredients (format: ingredient amount unit, empty line to finish):")
+                print("Example: Shrimp 1 lb")
+                
+                while True:
+                    ingredient_line = input("> ").strip()
+                    if not ingredient_line:
+                        break
+                    
+                    # Parse the ingredient line
+                    parts = ingredient_line.split()
+                    if len(parts) < 1:
+                        print("Invalid format. Please enter at least the ingredient name.")
+                        continue
+                        
+                    if len(parts) == 1:
+                        # Just ingredient name
+                        ingredient_name = parts[0]
+                        ingredients[ingredient_name] = {}
+                    elif len(parts) >= 3:
+                        # Ingredient with amount and unit
+                        # The ingredient name might have spaces, so join everything except the last two parts
+                        amount_index = len(parts) - 2
+                        ingredient_name = " ".join(parts[:amount_index])
+                        try:
+                            amount = float(parts[amount_index])
+                            unit = parts[amount_index + 1]
+                            ingredients[ingredient_name] = {"amount": amount, "unit": unit}
+                        except ValueError:
+                            print("Invalid amount format. Using as ingredient name only.")
+                            ingredient_name = ingredient_line
+                            ingredients[ingredient_name] = {}
+                    elif len(parts) == 2:
+                        # Try to parse the second part as a number
+                        ingredient_name = parts[0]
+                        try:
+                            amount = float(parts[1])
+                            ingredients[ingredient_name] = {"amount": amount}
+                        except ValueError:
+                            # If not a number, treat as a unit
+                            ingredients[ingredient_name] = {"unit": parts[1]}
+                
+                recipe["ingredients"] = ingredients
+            
+            print("\nCurrent instructions:")
+            wrapped_instructions = textwrap.wrap(recipe["instructions"], width=70)
+            for line in wrapped_instructions:
                 print(f"  {line}")
+            
+            choice = input("\nEdit instructions? (y/n): ").lower()
+            if choice == 'y':
+                print("Enter instructions (multi-line, type 'END' on a new line to finish):")
+                instructions_lines = []
+                while True:
+                    line = input()
+                    if line.strip() == "END":
+                        break
+                    instructions_lines.append(line)
+                recipe["instructions"] = " ".join(instructions_lines)
+            
+            print("\nCurrent notes:")
+            if "notes" in recipe and recipe["notes"]:
+                wrapped_notes = textwrap.wrap(recipe["notes"], width=70)
+                for line in wrapped_notes:
+                    print(f"  {line}")
+            else:
+                print("  (No notes)")
+            
+            choice = input("\nEdit notes? (y/n): ").lower()
+            if choice == 'y':
+                print("Enter notes (multi-line, type 'END' on a new line to finish):")
+                notes_lines = []
+                while True:
+                    line = input()
+                    if line.strip() == "END":
+                        break
+                    notes_lines.append(line)
+                recipe["notes"] = " ".join(notes_lines)
+            
+            self.save_recipes()
+            print(f"Recipe '{actual_recipe_name}' updated successfully!")
+            
+            # Calculate and show updated price
+            price = self.calculate_recipe_price(recipe)
+            if price is not None:
+                print(f"Updated estimated cost: ${price:.2f}")
         else:
-            print("  (No notes)")
-        
-        choice = input("\nEdit notes? (y/n): ").lower()
-        if choice == 'y':
-            print("Enter notes (multi-line, type 'END' on a new line to finish):")
-            notes_lines = []
-            while True:
-                line = input()
-                if line.strip() == "END":
-                    break
-                notes_lines.append(line)
-            recipe["notes"] = " ".join(notes_lines)
-        
-        self.save_recipes()
-        print(f"Recipe '{recipe_name}' updated successfully!")
-        
-        # Calculate and show updated price
-        price = self.calculate_recipe_price(recipe)
-        if price is not None:
-            print(f"Updated estimated cost: ${price:.2f}")
+            print(f"Recipe '{recipe_name}' doesn't exist!")
     
     def add_ingredient_price(self, ingredient_name: str, price: float, measurement: str) -> None:
         """Add or update an ingredient price in the price database."""
@@ -481,14 +497,21 @@ class RecipeManager:
         print(f"Price data for '{ingredient_name}' added/updated.")
     
     def delete_recipe(self, recipe_name: str) -> None:
-        """Delete a recipe if it exists."""
+        """Delete a recipe if it exists, with case-insensitive matching."""
         current = self.get_current_node()
-        if recipe_name in current["recipes"]:
-            confirm = input(f"Are you sure you want to delete '{recipe_name}'? (y/n): ").lower()
+        
+        # Create a dictionary mapping lowercase recipe names to their actual names
+        recipe_name_map = {name.lower(): name for name in current["recipes"]}
+        
+        # Check if the lowercase version of the requested recipe exists
+        if recipe_name.lower() in recipe_name_map:
+            # Use the actual recipe name with correct capitalization
+            actual_recipe_name = recipe_name_map[recipe_name.lower()]
+            confirm = input(f"Are you sure you want to delete '{actual_recipe_name}'? (y/n): ").lower()
             if confirm == 'y':
-                del current["recipes"][recipe_name]
+                del current["recipes"][actual_recipe_name]
                 self.save_recipes()
-                print(f"Recipe '{recipe_name}' deleted!")
+                print(f"Recipe '{actual_recipe_name}' deleted!")
             else:
                 print("Deletion cancelled.")
         else:

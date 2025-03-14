@@ -135,10 +135,17 @@ class RecipeManager:
         return total_price
     
     def enter_folder(self, folder_name: str) -> bool:
-        """Enter a folder if it exists."""
+        """Enter a folder if it exists, with case-insensitive matching."""
         current = self.get_current_node()
-        if folder_name in current["folders"]:
-            self.current_path.append(folder_name)
+        
+        # Create a dictionary mapping lowercase folder names to their actual names
+        folder_name_map = {name.lower(): name for name in current["folders"]}
+        
+        # Check if the lowercase version of the requested folder exists
+        if folder_name.lower() in folder_name_map:
+            # Use the actual folder name with correct capitalization
+            actual_folder_name = folder_name_map[folder_name.lower()]
+            self.current_path.append(actual_folder_name)
             return True
         else:
             print(f"Folder '{folder_name}' doesn't exist!")
@@ -216,20 +223,35 @@ class RecipeManager:
                 for ingredient in recipe["ingredients"]:
                     print(f"  • {ingredient}")
             
-            print("\nInstructions:")
-            instructions = recipe["instructions"]
-            wrapped_instructions = textwrap.wrap(instructions, width=70)
-            for line in wrapped_instructions:
-                print(f"  {line}")
+            print("\nInstructions:\n")
+            
+            # Split by lines, and print each line with text wrapping
+            instructions = recipe["instructions"].split("\n")
+            
+            i = 1
+            for line in instructions:
+                # Print instruction number
+                print(str(i) + ". ", end="")
+                i += 1
+                
+                wrapped_line = textwrap.wrap(line, width=70)
+                
+                # Indent lines that aren't 1st to be in line with numbered list
+                first = True
+                for sub_line in wrapped_line:
+                    print(f"   {sub_line}" if first is False else sub_line)
+                    first = False
+                        
+                print() # Line between steps
             
             if "notes" in recipe and recipe["notes"]:
-                print("\nNotes:")
+                print("Notes:")
                 notes = recipe["notes"]
                 wrapped_notes = textwrap.wrap(notes, width=70)
                 for line in wrapped_notes:
                     print(f"  {line}")
             
-            print("\n" + "=" * 50 + "\n")
+            print("=" * 50 + "\n")
         else:
             print(f"Recipe '{recipe_name}' doesn't exist!")
     

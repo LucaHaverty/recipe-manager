@@ -38,7 +38,7 @@
               "unit": "tbsp"
             }
           },
-          "instructions": "",
+          "instructions": "Boil water to cook pasta\nSaute shrimp in pan with 1tbsp oil\nRemove shrimp, add more oil, and saute shallot for a few minutes\nAdd garlic, cook for a minute, then add tomatoes and simmer until bursting and mash-able\nAdd butter parmesan, basil, shrimp, and season to taste. Mix in pasta and enjoy!",
           "notes": ""
         },
         "Butter Fake Chicken": {
@@ -51,6 +51,14 @@
               "amount": 1.0,
               "unit": "ct"
             },
+            "Vegetable Oil": {
+              "amount": 0.5,
+              "unit": "tbsp"
+            },
+            "Butter": {
+              "amount": 2.0,
+              "unit": "tbsp"
+            },
             "Rice": {
               "amount": 1.0,
               "unit": "cup"
@@ -60,7 +68,7 @@
               "unit": "ct"
             }
           },
-          "instructions": "",
+          "instructions": "Start cooking rice\nThaw and brown chicken in olive oil\nAdd sauce and butter, simmer for 5 minutes\nWarm naan in 350\u00b0F over\nServe over rice with naan",
           "notes": ""
         },
         "Simple Tacos": {
@@ -96,9 +104,13 @@
             "Refried Beans": {
               "amount": 1.0,
               "unit": "ct"
+            },
+            "Olive Oil": {
+              "amount": 0.5,
+              "unit": "tbsp"
             }
           },
-          "instructions": "",
+          "instructions": "Saute 3/4 of the onion and bell pepper in olive oil, then add seasoning to taste\nFinely dice tomatoes, last 1/4 of the onion, and mix with lime and salt to taste\nWarm beans, serve, and enjoy!",
           "notes": ""
         },
         "Baked Feta Pasta": {
@@ -141,10 +153,220 @@
               "unit": "ct"
             }
           },
-          "instructions": "",
+          "instructions": "Preheat the oven to 400\u00b0F. In a large ovenproof skillet or medium baking dish, combine tomatoes, shallot, garlic, and all but 1 Tbsp. oil; season with salt and red pepper flakes and toss to combine.\nPlace feta into the center of the tomato mixture and drizzle with reserved 1 Tsp. oil. Scatter thyme sprigs over tomatoes.\nBake until tomatoes are bursting and the feta is golden on top, 40 to 45 minutes.\nMeanwhile, in a large pot of boiling salted water, cook pasta, stirring occasionally, until al dente according to package directions. Reserve 1/2 c. pasta water before draining.\nTo skillet, add cooked pasta, reserved pasta water, and lemon zest (if using) and stir until combined. Top with basil.",
+          "notes": ""
+        },
+        "Beans and Rice": {
+          "ingredients": {
+            "Rice": {
+              "amount": 2.0,
+              "unit": "cup"
+            },
+            "Chili Powder": {
+              "amount": 2.0,
+              "unit": "tbsp"
+            },
+            "Lime": {
+              "amount": 1.0,
+              "unit": "ct"
+            },
+            "Canned Diced Tomatoes": {
+              "amount": 2.0,
+              "unit": "ct"
+            },
+            "Yellow Onion": {
+              "amount": 1.0,
+              "unit": "ct"
+            },
+            "Red Bell Pepper": {
+              "amount": 2.0,
+              "unit": "ct"
+            },
+            "Mexican Cheese": {
+              "amount": 8.0,
+              "unit": "oz"
+            },
+            "Canned Black Beans": {
+              "amount": 2.0,
+              "unit": "ct"
+            },
+            "Canned Green Chiles": {
+              "amount": 1.0,
+              "unit": "ct"
+            },
+            "Olive Oil": {
+              "amount": 1.0,
+              "unit": "tbsp"
+            }
+          },
+          "instructions": "Start cooking rice\nSaute pepper and onion in olive oil then add seasonings to taste\nAdd beans, chiles, and tomatoes, then continue to cook for a few minutes\nMix in rice and lime, serve, and enjoy!",
           "notes": ""
         }
       }
+    },
+    "Baking": {
+      "folders": {
+        "Cookies": {
+          "folders": {},
+          "recipes": {
+            "Chocolate Triple Chip": {
+              "ingredients": {
+                "Flour": {
+                  "amount": 2.33,
+                  "unit": "cup"
+                },
+                "Cocoa Powder": {
+                  "amount": 0.75,
+                  "unit": "cup"
+                },
+                "Baking Soda": {
+                  "amount": 1.0,
+                  "unit": "tsp"
+                },
+                "Salt": {
+                  "amount": 0.5,
+                  "unit": "tsp"
+                },
+                "Butter": {
+                  "amount": 1.0,
+                  "unit": "cup"
+                },
+                "Sugar": {
+                  "amount": 1.0,
+                  "unit": "cup"
+                },
+                "Light Brown Sugar": {
+                  "amount": 1.0,
+                  "unit": "cup"
+                },
+                "Egg": {
+                  "amount": 2.0,
+                  "unit": "ct"
+                },
+                "Vanilla Extract": {
+                  "amount": 1.5,
+                  "unit": "tsp"
+                },
+                "Milk Chocolate Chips": {
+                  "amount": 0.75,
+                  "unit": "cup"
+                },
+                "Semisweet Chocolate Chips": {
+                  "amount": 0.75,
+                  "unit": "cup"
+                },
+                "White Chocolate Chips": {
+                  "amount": 0.75,
+                  "unit": "cup"
+                },
+                "Peanuts": {
+                  "amount": 0.5,
+                  "unit": "cup"
+                }
+              },
+              "instructions": "Preheat the oven to 350\u00b0F. Line a large baking sheet with a silicone baking mat or parchment paper. Set aside.\nIn a medium bowl, whisk together the flour, cocoa, baking soda, and sea salt. Set aside.\nIn the bowl of a stand mixer fitted with the paddle attachment, combine the butter and both sugars. Mix until smooth, 2 minutes. Add the eggs one at a time, mixing well after each addition. Add the vanilla and mix until combined.\nGradually add the flour mixture and beat on low speed until just combined. Use a spatula to stir in all the chocolate chips.\nDrop the dough by the rounded tablespoon on the prepared baking sheet, about 2 inches apart. Not all the cookies will fit on the sheet for one batch. Bake for 10 minutes, until the cookies are set but still soft in the center. Don't overbake. Gently press a few more chocolate chips and chunks into the tops of the cookies. Let the cookies cool on the baking sheet for 3 to 5 minutes before transferring to a cooling rack to cool completely. While the cookies are still soft, gently press the extra chocolate chips into the cookies to make them look pretty. Once the baking sheet has cooled completely, repeat with the remaining dough.\nStore the cookies in an airtight container at room temperature for up to 4 days or in the freezer for up to 1 month.",
+              "notes": ""
+            },
+            "Ginger Molasses": {
+              "ingredients": {
+                "Butter": {
+                  "amount": 0.5,
+                  "unit": "cup"
+                },
+                "Brown Sugar": {
+                  "amount": 0.5,
+                  "unit": "cup"
+                },
+                "White Sugar": {
+                  "amount": 0.5,
+                  "unit": "cup"
+                },
+                "Egg": {
+                  "amount": 1.0,
+                  "unit": "ct"
+                },
+                "Molasses": {
+                  "amount": 0.5,
+                  "unit": "cup"
+                },
+                "Flour": {
+                  "amount": 2.0,
+                  "unit": "cup"
+                },
+                "Baking Soda": {
+                  "amount": 2.0,
+                  "unit": "tsp"
+                },
+                "Salt": {
+                  "amount": 0.5,
+                  "unit": "tsp"
+                },
+                "Ginger": {
+                  "amount": 2.0,
+                  "unit": "tsp"
+                },
+                "Cinnamon": {
+                  "amount": 1.0,
+                  "unit": "tsp"
+                },
+                "Cloves": {
+                  "amount": 0.5,
+                  "unit": "tsp"
+                }
+              },
+              "instructions": "Preheat the oven to 350\u00b0F and line a baking pan with parchment paper\nCream the butter, brown sugar and white sugar together in a stand mixer until creamy.\nThen add the egg and molasses and mix until well combined.\nMix all the dry ingredients together in a bowl then slowly pour the dry ingredients into the stand mixer while mixing on low speed.\nMix until everything is well combined.\nPlace the cookie dough mixture in the fridge for 30-60 minutes until the dough is easy to handle.\nRoll the dough into small 1-inch balls, then roll each ball to coat in sugar.\nPlace on the cookie sheet and bake for 10-13 minutes, until the cookies begin to crack on top.\nRemove and let cool before eating.",
+              "notes": ""
+            },
+            "Chocolate Crinkle": {
+              "ingredients": {
+                "Cocoa Powder": {
+                  "amount": 1.0,
+                  "unit": "cup"
+                },
+                "Sugar": {
+                  "amount": 1.5,
+                  "unit": "cup"
+                },
+                "Vegetable Oil": {
+                  "amount": 0.5,
+                  "unit": "cup"
+                },
+                "Egg": {
+                  "amount": 4.0,
+                  "unit": "ct"
+                },
+                "Vanilla Extract": {
+                  "amount": 2.0,
+                  "unit": "tsp"
+                },
+                "Flour": {
+                  "amount": 2.0,
+                  "unit": "cup"
+                },
+                "Baking Powder": {
+                  "amount": 2.0,
+                  "unit": "tsp"
+                },
+                "Salt": {
+                  "amount": 0.5,
+                  "unit": "tsp"
+                },
+                "Powdered Sugar": {
+                  "amount": 1.0,
+                  "unit": "cup"
+                }
+              },
+              "instructions": "Beat together the cocoa powder, white sugar, and vegetable oil\nAdd the eggs, one at a time, and then the vanilla\nWhisk together the flour, baking powder, salt, and espresso powder (if using)\nBeat the dry ingredients into the cocoa-oil mix\nCover and chill\nPreheat the oven to 350\u00b0F and prepare the baking sheets with parchment. Place the powdered sugar in a bowl\nRoll the cookies into 1-inch balls and thoroughly coat in powdered sugar and place 12 to 16 on each sheet\nBake at 350\u00b0F for 10 to 13 minutes",
+              "notes": "OPTIONAL - Add 1 tsp espresso powder or instant coffee for a richer flavor"
+            }
+          }
+        },
+        "Bread": {
+          "folders": {},
+          "recipes": {}
+        }
+      },
+      "recipes": {}
     }
   },
   "recipes": {}

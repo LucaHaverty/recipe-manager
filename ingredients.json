@@ -94,5 +94,113 @@
   "fresh thyme": {
     "price": 1.5,
     "measurement": "ct"
+  },
+  "canned diced tomatoes": {
+    "price": 1.5,
+    "measurement": "ct"
+  },
+  "canned black beans": {
+    "price": 1.0,
+    "measurement": "ct"
+  },
+  "chili powder": {
+    "price": 0.2,
+    "measurement": "tbsp"
+  },
+  "yellow onion": {
+    "price": 0.7,
+    "measurement": "ct"
+  },
+  "canned green chiles": {
+    "price": 1.5,
+    "measurement": "ct"
+  },
+  "flour": {
+    "price": 0.11,
+    "measurement": "cup"
+  },
+  "cocoa powder": {
+    "price": 2.21,
+    "measurement": "cup"
+  },
+  "baking soda": {
+    "price": 0.01,
+    "measurement": "tsp"
+  },
+  "salt": {
+    "price": 0.0,
+    "measurement": "tsp"
+  },
+  "sugar": {
+    "price": 0.65,
+    "measurement": "cup"
+  },
+  "white sugar": {
+    "price": 0.65,
+    "measurement": "cup"
+  },
+  "brown sugar": {
+    "price": 0.33,
+    "measurement": "cup"
+  },
+  "dark brown sugar": {
+    "price": 0.33,
+    "measurement": "cup"
+  },
+  "light brown sugar": {
+    "price": 0.33,
+    "measurement": "cup"
+  },
+  "egg": {
+    "price": 0.35,
+    "measurement": "ct"
+  },
+  "vanilla extract": {
+    "price": 0.25,
+    "measurement": "tsp"
+  },
+  "milk chocolate chips": {
+    "price": 1.25,
+    "measurement": "cup"
+  },
+  "semisweet chocolate chips": {
+    "price": 1.25,
+    "measurement": "cup"
+  },
+  "white chocolate chips": {
+    "price": 1.25,
+    "measurement": "cup"
+  },
+  "peanuts": {
+    "price": 1.0,
+    "measurement": "cup"
+  },
+  "vegetable oil": {
+    "price": 0.09,
+    "measurement": "fl_oz"
+  },
+  "molasses": {
+    "price": 2.4,
+    "measurement": "cup"
+  },
+  "ginger": {
+    "price": 0.05,
+    "measurement": "tsp"
+  },
+  "cinnamon": {
+    "price": 0.05,
+    "measurement": "tsp"
+  },
+  "cloves": {
+    "price": 0.08,
+    "measurement": "tsp"
+  },
+  "baking powder": {
+    "price": 0.05,
+    "measurement": "tsp"
+  },
+  "powdered sugar": {
+    "price": 0.3,
+    "measurement": "cup"
   }
 }
